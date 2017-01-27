@@ -4,7 +4,7 @@
 "  FileName:        authorinfo.vim
 "  Description:     
 "  Version:         1.5
-"  LastChange:      2011-02-23 16:42:42
+"  LastChange:      2017-01-14 16:30:29
 "  History:         support bash's #!xxx
 "                   fix bug for NerdComment's <leader>
 "=============================================================================
@@ -126,14 +126,15 @@ function s:AddTitle()
     normal o
     call setline('.',noTypeChar.preChar.'     HomePage: '.g:vimrc_homepage)
     normal o
-    call setline('.',noTypeChar.preChar.'      Version: 0.0.1')
+    call setline('.',noTypeChar.preChar.'      Version: ')
     normal o
     call setline('.',noTypeChar.preChar.'   LastChange: '.strftime("%Y-%m-%d %H:%M:%S"))
     normal o
-    call setline('.',noTypeChar.preChar.'      History:')
+    call setline('.',noTypeChar.preChar.'      History: ')
     normal o
     call setline('.',noTypeChar.'=============================================================================')
     let lastLine = line('.')
+    normal o
 
     "在最后一行之后做的事情
     call s:AfterTitle()
